@@ -160,7 +160,7 @@ def main():
     parser.add_argument(
         '--ann',
         default='data/coco/annotations/instances_val2017.json',
-        help='annotation file path')
+        help='annotations file path')
     parser.add_argument(
         '--types', type=str, nargs='+', default=['bbox'], help='result types')
     args = parser.parse_args()

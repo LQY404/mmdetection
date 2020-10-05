@@ -20,7 +20,7 @@ class WIDERFaceDataset(XMLDataset):
         super(WIDERFaceDataset, self).__init__(**kwargs)
 
     def load_annotations(self, ann_file):
-        """Load annotation from WIDERFace XML style annotation file.
+        """Load annotations from WIDERFace XML style annotations file.
 
         Args:
             ann_file (str): Path of XML file.

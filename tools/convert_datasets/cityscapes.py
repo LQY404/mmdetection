@@ -26,7 +26,7 @@ def collect_files(img_dir, gt_dir):
 
 
 def collect_annotations(files, nproc=1):
-    print('Loading annotation images')
+    print('Loading annotations images')
     if nproc > 1:
         images = mmcv.track_parallel_progress(
             load_img_info, files, nproc=nproc)
@@ -140,7 +140,7 @@ def main():
     for split, json_name in set_name.items():
         print(f'Converting {split} into {json_name}')
         with mmcv.Timer(
-                print_tmpl='It tooks {}s to convert Cityscapes annotation'):
+                print_tmpl='It tooks {}s to convert Cityscapes annotations'):
             files = collect_files(
                 osp.join(img_dir, split), osp.join(gt_dir, split))
             image_infos = collect_annotations(files, nproc=args.nproc)

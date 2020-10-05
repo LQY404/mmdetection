@@ -14,7 +14,7 @@ from .pipelines import Compose
 class CustomDataset(Dataset):
     """Custom dataset for detection.
 
-    The annotation format is shown as follows. The `ann` field is optional for
+    The annotations format is shown as follows. The `ann` field is optional for
     testing.
 
     .. code-block:: none
@@ -41,7 +41,7 @@ class CustomDataset(Dataset):
             If is None, ``cls.CLASSES`` will be used. Default: None.
         data_root (str, optional): Data root for ``ann_file``,
             ``img_prefix``, ``seg_prefix``, ``proposal_file`` if specified.
-        test_mode (bool, optional): If set True, annotation will not be loaded.
+        test_mode (bool, optional): If set True, annotations will not be loaded.
         filter_empty_gt (bool, optional): If set true, images without bounding
             boxes of the dataset's classes will be filtered out. This option
             only works when `test_mode=False`, i.e., we never filter images
@@ -106,7 +106,7 @@ class CustomDataset(Dataset):
         return len(self.data_infos)
 
     def load_annotations(self, ann_file):
-        """Load annotation from annotation file."""
+        """Load annotations from annotations file."""
         return mmcv.load(ann_file)
 
     def load_proposals(self, proposal_file):
@@ -114,7 +114,7 @@ class CustomDataset(Dataset):
         return mmcv.load(proposal_file)
 
     def get_ann_info(self, idx):
-        """Get annotation by index.
+        """Get annotations by index.
 
         Args:
             idx (int): Index of data.
@@ -181,7 +181,7 @@ class CustomDataset(Dataset):
             idx (int): Index of data.
 
         Returns:
-            dict: Training/test data (with annotation if `test_mode` is set \
+            dict: Training/test data (with annotations if `test_mode` is set \
                 True).
         """
 
@@ -201,7 +201,7 @@ class CustomDataset(Dataset):
             idx (int): Index of data.
 
         Returns:
-            dict: Training data and annotation after pipeline with new keys \
+            dict: Training data and annotations after pipeline with new keys \
                 introduced by pipeline.
         """
 

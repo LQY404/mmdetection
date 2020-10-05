@@ -197,14 +197,14 @@ class LoadAnnotations(object):
     """Load mutiple types of annotations.
 
     Args:
-        with_bbox (bool): Whether to parse and load the bbox annotation.
+        with_bbox (bool): Whether to parse and load the bbox annotations.
              Default: True.
-        with_label (bool): Whether to parse and load the label annotation.
+        with_label (bool): Whether to parse and load the label annotations.
             Default: True.
-        with_mask (bool): Whether to parse and load the mask annotation.
+        with_mask (bool): Whether to parse and load the mask annotations.
              Default: False.
         with_seg (bool): Whether to parse and load the semantic segmentation
-            annotation. Default: False.
+            annotations. Default: False.
         poly2mask (bool): Whether to convert the instance masks from polygons
             to bitmaps. Default: True.
         file_client_args (dict): Arguments to instantiate a FileClient.
@@ -265,7 +265,7 @@ class LoadAnnotations(object):
         bitmaps.
 
         Args:
-            mask_ann (list | dict): Polygon mask annotation input.
+            mask_ann (list | dict): Polygon mask annotations input.
             img_h (int): The height of output mask.
             img_w (int): The width of output mask.
 

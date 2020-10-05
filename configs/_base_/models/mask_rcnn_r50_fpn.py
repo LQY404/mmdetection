@@ -1,4 +1,5 @@
 # model settings
+# after parse, the dict data is transforming to json.
 model = dict(
     type='MaskRCNN',
     pretrained='torchvision://resnet50',

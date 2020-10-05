@@ -43,10 +43,10 @@ class CocoDataset(CustomDataset):
                'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush')
 
     def load_annotations(self, ann_file):
-        """Load annotation from COCO style annotation file.
+        """Load annotations from COCO style annotations file.
 
         Args:
-            ann_file (str): Path of annotation file.
+            ann_file (str): Path of annotations file.
 
         Returns:
             list[dict]: Annotation info from COCO api.
@@ -64,7 +64,7 @@ class CocoDataset(CustomDataset):
         return data_infos
 
     def get_ann_info(self, idx):
-        """Get COCO annotation by index.
+        """Get COCO annotations by index.
 
         Args:
             idx (int): Index of data.
@@ -96,7 +96,7 @@ class CocoDataset(CustomDataset):
     def _filter_imgs(self, min_size=32):
         """Filter images too small or without ground truths."""
         valid_inds = []
-        # obtain images that contain annotation
+        # obtain images that contain annotations
         ids_with_ann = set(_['image_id'] for _ in self.coco.anns.values())
         # obtain images that contain annotations of the required categories
         ids_in_cat = set()
@@ -118,7 +118,7 @@ class CocoDataset(CustomDataset):
         return valid_inds
 
     def _parse_ann_info(self, img_info, ann_info):
-        """Parse bbox and mask annotation.
+        """Parse bbox and mask annotations.
 
         Args:
             ann_info (list[dict]): Annotation info of an image.

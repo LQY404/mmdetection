@@ -25,7 +25,7 @@ class XMLDataset(CustomDataset):
         self.min_size = min_size
 
     def load_annotations(self, ann_file):
-        """Load annotation from XML style ann_file.
+        """Load annotations from XML style ann_file.
 
         Args:
             ann_file (str): Path of XML file.
@@ -59,7 +59,7 @@ class XMLDataset(CustomDataset):
         return data_infos
 
     def _filter_imgs(self, min_size=32):
-        """Filter images too small or without annotation."""
+        """Filter images too small or without annotations."""
         valid_inds = []
         for i, img_info in enumerate(self.data_infos):
             if min(img_info['width'], img_info['height']) < min_size:
@@ -80,7 +80,7 @@ class XMLDataset(CustomDataset):
         return valid_inds
 
     def get_ann_info(self, idx):
-        """Get annotation from XML file by index.
+        """Get annotations from XML file by index.
 
         Args:
             idx (int): Index of data.

@@ -24,7 +24,7 @@ class CityscapesDataset(CocoDataset):
     def _filter_imgs(self, min_size=32):
         """Filter images too small or without ground truths."""
         valid_inds = []
-        # obtain images that contain annotation
+        # obtain images that contain annotations
         ids_with_ann = set(_['image_id'] for _ in self.coco.anns.values())
         # obtain images that contain annotations of the required categories
         ids_in_cat = set()
@@ -50,7 +50,7 @@ class CityscapesDataset(CocoDataset):
         return valid_inds
 
     def _parse_ann_info(self, img_info, ann_info):
-        """Parse bbox and mask annotation.
+        """Parse bbox and mask annotations.
 
         Args:
             img_info (dict): Image info of an image.
@@ -255,7 +255,7 @@ class CityscapesDataset(CocoDataset):
 
         # left metrics are all coco metric
         if len(metrics) > 0:
-            # create CocoDataset with CityscapesDataset annotation
+            # create CocoDataset with CityscapesDataset annotations
             self_coco = CocoDataset(self.ann_file, self.pipeline.transforms,
                                     None, self.data_root, self.img_prefix,
                                     self.seg_prefix, self.proposal_file,
